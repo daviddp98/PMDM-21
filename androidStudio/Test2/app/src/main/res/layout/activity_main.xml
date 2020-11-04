@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="373dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:clickable="false"
+        android:editable="false"
+        android:fontFamily="serif"
+        android:text="¿Cual es tu equipo de fútbol favorito?"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textRes"
+        android:layout_width="346dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:clickable="false"
+        android:editable="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="290dp"
+        android:layout_height="248dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="177dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRes">
+
+        <RadioButton
+            android:id="@+id/radioButtonBetis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Real Betis"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sevilla FC"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonRM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Real Madrid"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FC Barcelona"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="194dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:layout_marginBottom="86dp"
+        android:text="Me gusta el fútbol"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+</androidx.constraintlayout.widget.ConstraintLayout>
