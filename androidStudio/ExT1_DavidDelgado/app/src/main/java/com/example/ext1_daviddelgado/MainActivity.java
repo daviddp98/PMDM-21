@@ -19,7 +19,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ListView list;
     RadioGroup radioGroup;
@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPause = (Button) findViewById(R.id.buttonPause);
         buttonStop = (Button) findViewById(R.id.buttonStop);
 
-        sp= new SoundPool(1, AudioManager.STREAM_MUSIC,1);
+        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 1);
 
-       String[] audios= {"Elefante", "Caballo", "Gato", "Leon", "Pajaro", "Perro"};
+        String[] audios = {"Elefante", "Caballo", "Gato", "Leon", "Pajaro", "Perro"};
 
-       ArrayAdapter arrayAdapter= new ArrayAdapter(this, R.layout.activity_main, audios);
-       list.setAdapter(arrayAdapter);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.activity_main, audios);
+        list.setAdapter(arrayAdapter);
     }
 
     @Override
