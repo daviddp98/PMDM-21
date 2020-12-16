@@ -1,27 +1,22 @@
 package com.example.navigationdraweractivity;
 
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -58,12 +53,12 @@ public class MainActivity extends AppCompatActivity
         TextView nombre = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewNombre);
         TextView email = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textViewEmail);
 
-        nombre.setText("Miguel");
-        email.setText("miguel@miguel.com");
+        nombre.setText("David");
+        email.setText("daviddp98@david.com");
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.contenedor,new ListadoAveriasFragment())
+                .add(R.id.contenedor, new ListadoAveriasFragment())
                 .commit();
 
     }
@@ -118,10 +113,10 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        if(f!=null) {
+        if (f != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.contenedor,f)
+                    .replace(R.id.contenedor, f)
                     .commit();
         }
 
