@@ -1,7 +1,5 @@
 package com.example.buscaminas;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList tablero;
     private int[][] botones;
     private int columnasBotones = 8;
-    private int columnasTablero = 8;
+    private int columnasTablero = columnasBotones + 2;
     private int minas = 10;
 
     private String[][] tableroMinas;
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int j = 0; j < columnasTablero - 1; j++) {
                 if (j > 0 && i > 0 && j < columnasTablero - 1 && i < columnasTablero - 1) {
                     if (v.getId() == botones[i][j]) {
-                        v.setBackgroundColor(Color.RED);
+                        v.setBackground(this.getResources().getDrawable(R.drawable.button_border4));
                         Toast.makeText(this, "MINA MARCADA", Toast.LENGTH_SHORT).show();
                     }
                 }
