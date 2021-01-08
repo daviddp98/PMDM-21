@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">6_Almacenamiento_UsuarioYContrasena</string>
+
+    <string name="preferencias_activity_file">PrefenciasActivity</string>
+    <string name="preferencias_email">email</string>
+    <string name="preferencias_islogin">islogin</string>
+</resources>
