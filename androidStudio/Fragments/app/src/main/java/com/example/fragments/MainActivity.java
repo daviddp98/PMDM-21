@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListado.C
     }
 
     @Override
-    public void onCorreoSeleccionado(Correo c) {
+    public void onCorreoSeleccionado(Persona c) {
         boolean hayDetalle =
                 (getSupportFragmentManager().findFragmentById(R.id.FrgDetalle) != null);
 
