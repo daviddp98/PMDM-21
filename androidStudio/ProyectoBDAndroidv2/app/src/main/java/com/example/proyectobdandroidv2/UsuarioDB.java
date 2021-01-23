@@ -1,6 +1,4 @@
-package com.example.proyectobdandroid.models;
-
-import com.example.proyectobdandroid.app.MyApp;
+package com.example.proyectobdandroidv2;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
@@ -12,16 +10,18 @@ public class UsuarioDB extends RealmObject {
     private String nombre;
     private int edad;
     private String descripcion;
+    private String urlFoto;
 
     public UsuarioDB() {
         this.id = MyApp.UsuarioID.incrementAndGet();
     }
 
-    public UsuarioDB(String nombre, int edad, String descripcion) {
+    public UsuarioDB(String nombre, int edad, String descripcion, String urlFoto) {
         this.id = MyApp.UsuarioID.incrementAndGet();
         this.nombre = nombre;
         this.edad = edad;
         this.descripcion = descripcion;
+        this.urlFoto = urlFoto;
     }
 
     public long getId() {
@@ -56,6 +56,14 @@ public class UsuarioDB extends RealmObject {
         this.descripcion = descripcion;
     }
 
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
     @Override
     public String toString() {
         return "UsuarioDB{" +
@@ -63,6 +71,7 @@ public class UsuarioDB extends RealmObject {
                 ", nombre='" + nombre + '\'' +
                 ", edad=" + edad +
                 ", descripcion='" + descripcion + '\'' +
+                ", urlFoto='" + urlFoto + '\'' +
                 '}';
     }
 }
