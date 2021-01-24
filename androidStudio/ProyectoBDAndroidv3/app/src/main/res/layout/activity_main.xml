@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/mainActivityEtNombre"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/mainActivityEtEdad"
+        android:layout_width="216dp"
+        android:layout_height="57dp"
+        android:hint="Edad" />
+
+    <EditText
+        android:id="@+id/mainActivityEtDesc"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:hint="Descripción" />
+
+    <Button
+        android:id="@+id/mainActivityBtSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/mainActivityBtReadAll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Leer todos" />
+
+        <Button
+            android:id="@+id/mainActivityBtReadByName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Leer por nombre" />
+
+        <Button
+            android:id="@+id/mainActivityBtReadById"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leer por iD" />
+
+    </LinearLayout>
+
+</LinearLayout>

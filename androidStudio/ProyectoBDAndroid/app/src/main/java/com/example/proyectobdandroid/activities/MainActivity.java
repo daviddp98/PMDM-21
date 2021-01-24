@@ -1,6 +1,7 @@
 package com.example.proyectobdandroid.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.os.Bundle;
 
