@@ -27,6 +27,7 @@ public class MyApp extends Application {
     private void initRealm() {
         Realm.init(getApplicationContext());
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
+                .allowWritesOnUiThread(true)
                 .schemaVersion(1)
                 .deleteRealmIfMigrationNeeded()
                 .build();

@@ -1,6 +1,8 @@
 package com.example.proyectobdandroidv3;
 
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -35,29 +37,44 @@ public class UsuarioBD {
         });
     }
 
-    public final static List<Usuario> getAllUsuario() {
+    public final static void delUsuario(int id) {
+        Realm realm = Realm.getDefaultInstance();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                Usuario usuario = realm.where(Usuario.class).equalTo("id", id).findFirst();
+                usuario.deleteFromRealm();
+            }
+        });
+    }
+
+    public final static List<Usuario> getAllUsuario(TextView textView) {
         Realm realm = Realm.getDefaultInstance();
         RealmResults<Usuario> usuarios = realm.where(Usuario.class).findAll();
         for (Usuario usuario : usuarios) {
-            Log.d("TAG", "id: " + usuario.getId() + " Nombre: " + usuario.getNombre() + " Edad: " + usuario.getEdad() + " Descripción: " + usuario.getDescripcion());
+            textView.setText(usuarios.toString());
+            //textView.setText("ID: " + usuario.getId() + "; Nombre: " + usuario.getNombre() + "; Edad: " + usuario.getEdad() + "; Descripción: " + usuario.getDescripcion());
+            //Log.d("TAG", "id: " + usuario.getId() + " Nombre: " + usuario.getNombre() + " Edad: " + usuario.getEdad() + " Descripción: " + usuario.getDescripcion());
         }
         return usuarios;
     }
 
-    public final static Usuario getUsuarioByName(String name) {
+    public final static Usuario getUsuarioByName(String name, TextView textView) {
         Realm realm = Realm.getDefaultInstance();
         Usuario usuario = realm.where(Usuario.class).equalTo("nombre", name).findFirst();
         if (usuario != null) {
-            Log.d("TAG", "id: " + usuario.getId() + " Nombre: " + usuario.getNombre() + " Edad: " + usuario.getEdad() + " Descripción: " + usuario.getDescripcion());
+            textView.setText("ID: " + usuario.getId() + "; Nombre: " + usuario.getNombre() + "; Edad: " + usuario.getEdad() + "; Descripción: " + usuario.getDescripcion());
+            //Log.d("TAG", "id: " + usuario.getId() + " Nombre: " + usuario.getNombre() + " Edad: " + usuario.getEdad() + " Descripción: " + usuario.getDescripcion());
         }
         return usuario;
     }
 
-    public final static Usuario getUsuarioById(int id) {
+    public final static Usuario getUsuarioById(int id, TextView textView) {
         Realm realm = Realm.getDefaultInstance();
         Usuario usuario = realm.where(Usuario.class).equalTo("id", id).findFirst();
         if (usuario != null) {
-            Log.d("TAG", "id: " + usuario.getId() + " Nombre: " + usuario.getNombre() + " Edad: " + usuario.getEdad() + " Descripción: " + usuario.getDescripcion());
+            textView.setText("ID: " + usuario.getId() + "; Nombre: " + usuario.getNombre() + "; Edad: " + usuario.getEdad() + "; Descripción: " + usuario.getDescripcion());
+            //Log.d("TAG", "id: " + usuario.getId() + " Nombre: " + usuario.getNombre() + " Edad: " + usuario.getEdad() + " Descripción: " + usuario.getDescripcion());
         }
         return usuario;
     }

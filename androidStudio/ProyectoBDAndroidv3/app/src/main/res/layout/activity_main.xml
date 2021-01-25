@@ -2,10 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/mainActivityEtID"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:hint="ID" />
 
     <EditText
         android:id="@+id/mainActivityEtNombre"
@@ -32,7 +38,7 @@
         android:text="Añadir" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/mainActivityBtDel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Eliminar" />
@@ -54,11 +60,17 @@
             android:text="Leer por nombre" />
 
         <Button
-            android:id="@+id/mainActivityBtReadById"
-            android:layout_width="wrap_content"
+            android:id="@+id/mainActivityBtReadByID"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Leer por iD" />
+            android:text="Leer por ID" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="436dp"
+        android:textColor="@color/black" />
 
 </LinearLayout>

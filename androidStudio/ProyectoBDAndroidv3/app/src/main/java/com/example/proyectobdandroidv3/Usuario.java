@@ -56,11 +56,6 @@ public class Usuario extends RealmObject {
 
     @Override
     public String toString() {
-        return "UsuarioDB{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", descripcion='" + descripcion + '\'' +
-                '}';
+        return "ID: " + getId() + "; Nombre: " + getNombre() + "; Edad: " + getEdad() + "; Descripción: " + getDescripcion() + "\n";
     }
 }

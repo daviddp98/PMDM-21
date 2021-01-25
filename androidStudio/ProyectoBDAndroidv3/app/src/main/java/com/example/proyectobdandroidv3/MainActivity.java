@@ -6,13 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import io.realm.Realm;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText nombreEt, edadEt, descEt;
-    Button saveBt, leerTodoBt, leerByName, leerById;
+    EditText nombreEt, edadEt, descEt, idEt;
+    TextView textView;
+    Button saveBt, leerTodoBt, leerByName, delBt, leerByID;
     Usuario usuario;
     Realm realm;
 
@@ -27,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void configView() {
         usuario = new Usuario();
+        idEt = findViewById(R.id.mainActivityEtID);
         nombreEt = findViewById(R.id.mainActivityEtNombre);
         edadEt = findViewById(R.id.mainActivityEtEdad);
         descEt = findViewById(R.id.mainActivityEtDesc);
+        textView = findViewById(R.id.textView);
 
         saveBt = findViewById(R.id.mainActivityBtSave);
         saveBt.setOnClickListener(new View.OnClickListener() {
@@ -42,11 +46,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        delBt = findViewById(R.id.mainActivityBtDel);
+        delBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UsuarioBD.delUsuario(Integer.parseInt(idEt.getText().toString()));
+            }
+        });
+
         leerTodoBt = findViewById(R.id.mainActivityBtReadAll);
         leerTodoBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UsuarioBD.getAllUsuario();
+                UsuarioBD.getAllUsuario(textView);
             }
         });
 
@@ -54,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
         leerByName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UsuarioBD.getUsuarioByName(nombreEt.getText().toString());
+                UsuarioBD.getUsuarioByName(nombreEt.getText().toString(), textView);
             }
         });
 
-        leerById = findViewById(R.id.mainActivityBtReadById);
-        leerById.setOnClickListener(new View.OnClickListener() {
+        leerByID = findViewById(R.id.mainActivityBtReadByID);
+        leerByID.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                UsuarioBD.getUsuarioById(Integer.parseInt(nombreEt.getText().toString()));
+            public void onClick(View v) {
+                UsuarioBD.getUsuarioById(Integer.parseInt(idEt.getText().toString()), textView);
             }
         });
     }
