@@ -33,13 +33,13 @@ public class LoginActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
 
-       // SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencias_activity_file), Context.MODE_PRIVATE);
-       // boolean isLogin = sharedPref.getBoolean(getString(R.string.preferencias_islogin), false);
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencias_activity_file), Context.MODE_PRIVATE);
+        boolean isLogin = sharedPref.getBoolean(getString(R.string.preferencias_islogin), false);
 
-       /* if (isLogin) {
+        if (isLogin) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
-        }*/
+        }
     }
 
     public void doLogin(View view) {
@@ -50,11 +50,11 @@ public class LoginActivity extends AppCompatActivity {
             // Login correcto
 
             // Guardar los datos del login
-           // SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencias_activity_file), Context.MODE_PRIVATE);
-            //SharedPreferences.Editor editor = sharedPref.edit();
-           // editor.putString(getString(R.string.preferencias_email), email);
-           //editor.putBoolean(getString(R.string.preferencias_islogin), true);
-           // editor.commit();
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencias_activity_file), Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString(getString(R.string.preferencias_email), email);
+            editor.putBoolean(getString(R.string.preferencias_islogin), true);
+            editor.commit();
 
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
