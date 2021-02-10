@@ -6,11 +6,10 @@ import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 
-public class Contacto extends BaseAdapter {
+public class Contacto {
 
     String nombre;
     String telef;
-    ArrayList<?> c;
 
     public Contacto() {
     }
@@ -37,22 +36,7 @@ public class Contacto extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return c.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return c.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+    public String toString() {
+        return "Nombre: " + nombre + ", Teléfono: " + telef;
     }
 }

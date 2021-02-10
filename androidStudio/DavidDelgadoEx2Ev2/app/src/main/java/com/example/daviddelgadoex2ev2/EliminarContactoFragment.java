@@ -13,12 +13,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class EliminarContactoFragment extends DialogFragment {
 
     AlertDialog.Builder builder;
     OnEliminarContactoListener mListener;
+    View v;
+    EditText editText, editText2;
 
     @NonNull
     @Override
@@ -28,14 +31,17 @@ public class EliminarContactoFragment extends DialogFragment {
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        builder.setView(inflater.inflate(R.layout.fragment_eliminar_contacto, null));
+        //builder.setView(inflater.inflate(R.layout.fragment_nuevo_contacto, null));
+        v = inflater.inflate(R.layout.fragment_eliminar_contacto, null);
+        builder.setView(v);
+        editText = (EditText) v.findViewById(R.id.editText);
+        editText2 = (EditText) v.findViewById(R.id.editText2);
 
         builder.setTitle("Eliminar Contacto")
                 .setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Toast.makeText(getActivity(), "Contacto Eliminado", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
-                        mListener.onContactoEliminarClickListener();
+                        mListener.onContactoEliminarClickListener(v);
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

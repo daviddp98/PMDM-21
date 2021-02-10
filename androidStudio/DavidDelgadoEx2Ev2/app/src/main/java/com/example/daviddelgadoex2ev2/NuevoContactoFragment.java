@@ -25,6 +25,7 @@ public class NuevoContactoFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
         builder = new AlertDialog.Builder(getActivity());
 
         // Get the layout inflater
@@ -40,8 +41,7 @@ public class NuevoContactoFragment extends DialogFragment {
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Toast.makeText(getActivity(), "Contacto Guardado", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
-                        Contacto nuevo= new Contacto(editText.getText().toString(), editText2.getText().toString());
+                        mListener.onContactoGuardarClickListener(v);
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
