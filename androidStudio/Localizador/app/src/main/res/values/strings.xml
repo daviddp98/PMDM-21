@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Localizador</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="latitud">Latitud:</string>
+    <string name="longitud">Longitud:</string>
+    <string name="parar_actualizaciones">Parar Actualizaciones</string>
+    <string name="iniciar_actualizaciones">Iniciar Actualizaciones</string>
+</resources>
